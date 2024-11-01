@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "64aa2d7c-9d9d-4316-a028-47f042e51321",
+		"name": "cuentas separadas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25387252",
+		"_collection_link": "https://cloudy-crescent-90670.postman.co/workspace/infinito~f8feae82-a921-4a63-8735-c06812949dad/collection/25387252-64aa2d7c-9d9d-4316-a028-47f042e51321?action=share&source=collection_link&creator=25387252"
+	},
+	"item": [
+		{
+			"name": "create accounts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"TBK\",\r\n    \"place\": \"CUMPLE AÑOS\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/v1/separate-accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"v1",
+						"separate-accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create persons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"PEDRO PEREZ\",\r\n    \"rut\": \"262470431-1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/v1/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"v1",
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Gastos por persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accounts\": \"66f0be23f8fdb17e72255211\",\r\n    \"persons\": \"66f2b3d80196a9e75a60c011\",\r\n    \"propina\": false,\r\n    \"data_consumit\": [\r\n        {\r\n            \"product_gloss\": \"LASANA\",\r\n            \"count\": \"1\",\r\n            \"unit_value\": \"15000\"\r\n        },\r\n        {\r\n            \"product_gloss\": \"LIMONADA\",\r\n            \"count\": \"1\",\r\n            \"unit_value\": \"8000\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/v1/consumption",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"v1",
+						"consumption"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cerrar cuenta",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status_account\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3800/api/v1/separate-accounts/66e8e07f3994965606f438b0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"v1",
+						"separate-accounts",
+						"66e8e07f3994965606f438b0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Details Consumit - general",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3800/api/v1/consumption",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3800",
+					"path": [
+						"api",
+						"v1",
+						"consumption"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
